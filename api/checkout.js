@@ -14,8 +14,6 @@ module.exports = async (req, res) => {
     line_items: [
       {
         price: priceId,
-        quantity
-
         quantity: 1,
       },
     ],
@@ -24,5 +22,5 @@ module.exports = async (req, res) => {
     cancel_url: `${req.headers.origin}/?canceled=true`,
   });
 
-  res.status(200).json({ sessionId: session.id });
+  res.status(200).json({ sessionId: session.id, url: session.url });
 };

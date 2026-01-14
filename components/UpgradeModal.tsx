@@ -26,8 +26,8 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
     return '';
   });
 
-  // URL da API de billing - ajuste conforme necessário
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+  // Price ID hardcoded - StartupPrice Pro
+  const priceId = 'prod_TlFD5Q6JllyNcq';
 
   const buyNow = async () => {
     setLoading(true);
@@ -41,23 +41,13 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
     }
 
     try {
-      // Gerar um userId único se não existir
-      let userId = localStorage.getItem('startupprice_user_id');
-      if (!userId) {
-        userId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        localStorage.setItem('startupprice_user_id', userId);
-      }
-
       // Salvar email no localStorage
       localStorage.setItem('startupprice_user_email', email);
 
-      const res = await fetch(`${API_URL}/api/billing/create-checkout-session`, {
+      const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userId,
-          email,
-        }),
+        body: JSON.stringify({ priceId }),
       });
 
       if (!res.ok) {
@@ -70,6 +60,9 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
       // Redirecionar para o checkout do Stripe
       if (data.url) {
         window.location.href = data.url;
+      } else if (data.sessionId) {
+        // Fallback: se não tiver URL mas tiver sessionId, construir URL
+        throw new Error(t.checkoutUrlError);
       } else {
         throw new Error(t.checkoutUrlError);
       }
