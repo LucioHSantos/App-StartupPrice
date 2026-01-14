@@ -27,7 +27,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
   });
 
   // Price ID hardcoded - StartupPrice Pro
-  const priceId = 'prod_TlFD5Q6JllyNcq';
+  const priceId = 'price_1SnijMHdcjTkJnJN6DrIfrTJ';
 
   const buyNow = async () => {
     setLoading(true);
