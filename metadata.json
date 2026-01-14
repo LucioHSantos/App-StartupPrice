@@ -1,0 +1,5 @@
+{
+  "name": "StartupPrice AI",
+  "description": "Expert pricing wizard for solopreneurs based on the Brazilian 'Planilha' methodology. Calculate profitable rates for services with overhead, markup, and capacity analysis.",
+  "requestFramePermissions": []
+}
