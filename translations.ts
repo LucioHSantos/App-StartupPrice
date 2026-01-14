@@ -82,6 +82,22 @@ export const translations = {
       saas: "SaaS 💻",
       consulting: "Consulting 👔",
       ecommerce: "E-commerce 📦"
+    },
+    upgradeModal: {
+      title: "Upgrade to StartupPrice AI Pro",
+      feature1: "Unlimited businesses",
+      feature2: "Unlimited products and simulations",
+      feature3: "Better control of your profit",
+      emailLabel: "Email",
+      emailPlaceholder: "your@email.com",
+      buyButton: "Buy $97/month",
+      testButton: "Test Pro (test mode)",
+      cancelButton: "Maybe later",
+      processing: "Processing...",
+      emailError: "Please enter a valid email",
+      checkoutError: "Error creating checkout session",
+      checkoutUrlError: "Checkout URL not received",
+      generalError: "Error processing purchase. Please try again."
     }
   },
   pt: {
@@ -166,6 +182,22 @@ export const translations = {
       saas: "SaaS/Software 💻",
       consulting: "Consultoria 👔",
       ecommerce: "E-commerce 📦"
+    },
+    upgradeModal: {
+      title: "Upgrade para StartupPrice AI Pro",
+      feature1: "Negócios ilimitados",
+      feature2: "Produtos e simulações ilimitadas",
+      feature3: "Melhor controle do seu lucro",
+      emailLabel: "Email",
+      emailPlaceholder: "seu@email.com",
+      buyButton: "Comprar R$97/mês",
+      testButton: "Testar Pro (modo teste)",
+      cancelButton: "Talvez depois",
+      processing: "Processando...",
+      emailError: "Por favor, informe um email válido",
+      checkoutError: "Erro ao criar sessão de checkout",
+      checkoutUrlError: "URL de checkout não recebida",
+      generalError: "Erro ao processar compra. Tente novamente."
     }
   },
   es: {
@@ -250,6 +282,22 @@ export const translations = {
       saas: "SaaS/Software 💻",
       consulting: "Consultoría 👔",
       ecommerce: "E-commerce 📦"
+    },
+    upgradeModal: {
+      title: "Actualizar a StartupPrice AI Pro",
+      feature1: "Negocios ilimitados",
+      feature2: "Productos y simulaciones ilimitadas",
+      feature3: "Mejor control de tu ganancia",
+      emailLabel: "Email",
+      emailPlaceholder: "tu@email.com",
+      buyButton: "Comprar $97/mes",
+      testButton: "Probar Pro (modo prueba)",
+      cancelButton: "Tal vez después",
+      processing: "Procesando...",
+      emailError: "Por favor, ingresa un email válido",
+      checkoutError: "Error al crear sesión de checkout",
+      checkoutUrlError: "URL de checkout no recibida",
+      generalError: "Error al procesar la compra. Intenta nuevamente."
     }
   }
 };
