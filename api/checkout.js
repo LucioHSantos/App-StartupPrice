@@ -22,5 +22,5 @@ module.exports = async (req, res) => {
     cancel_url: `${req.headers.origin}/?canceled=true`,
   });
 
-  res.status(200).json({ sessionId: session.id, url: session.url });
+  res.status(200).json({ url: session.url });
 };
