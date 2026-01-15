@@ -18,7 +18,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const updateProBannerText = async () => {
       if (language === 'pt') {
-        const usdPrice = 4.99;
+        const usdPrice = 5;
         const brlPrice = await convertUSDToBRL(usdPrice);
         const formattedPrice = formatBRLPrice(brlPrice);
         setProBannerText(`Mude agora para versão pro ${formattedPrice}`);

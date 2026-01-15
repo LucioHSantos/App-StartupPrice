@@ -32,7 +32,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "YOUR PROFITABLE PRICE",
     breakEven: "BREAK-EVEN",
-    proBanner: "Switch to Pro version now $4.99",
+    proBanner: "Switch to Pro version now $5",
     tierBasic: "Basic (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",
@@ -90,7 +90,7 @@ export const translations = {
       feature3: "Better control of your profit",
       emailLabel: "Email",
       emailPlaceholder: "your@email.com",
-      buyButton: "Buy $4.99/month",
+      buyButton: "Buy $5/month",
       testButton: "", // Removido - não é mais necessário
       cancelButton: "Maybe later",
       processing: "Processing...",
@@ -132,7 +132,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "SEU PREÇO LUCRATIVO",
     breakEven: "PONTO DE EQUILÍBRIO",
-    proBanner: "Mude agora para versão pro $4.99", // Será atualizado dinamicamente com a cotação atual
+    proBanner: "Mude agora para versão pro $5", // Será atualizado dinamicamente com a cotação atual
     tierBasic: "Básico (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",
@@ -232,7 +232,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "SU PRECIO RENTABLE",
     breakEven: "PUNTO DE EQUILIBRIO",
-    proBanner: "Cambia ahora a versión pro $4.99",
+    proBanner: "Cambia ahora a versión pro $5",
     tierBasic: "Básico (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",

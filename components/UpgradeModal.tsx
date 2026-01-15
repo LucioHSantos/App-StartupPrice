@@ -32,7 +32,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
   useEffect(() => {
     const updateBuyButtonText = async () => {
       if (language === 'pt') {
-        const usdPrice = 4.99;
+        const usdPrice = 5;
         const brlPrice = await convertUSDToBRL(usdPrice);
         const formattedPrice = formatBRLPrice(brlPrice);
         setBuyButtonText(`Comprar ${formattedPrice}/mês`);
@@ -62,18 +62,18 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
       // Salvar email no localStorage
       localStorage.setItem('startupprice_user_email', email);
 
-      const res = await fetch('/api/checkout', {
+      const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ priceId }),
       });
 
-      if (!res.ok) {
-        const errorData = await res.json();
+      if (!response.ok) {
+        const errorData = await response.json();
         throw new Error(errorData.error || t.checkoutError);
       }
 
-      const data = await res.json();
+      const data = await response.json();
       
       // Redirecionar para o checkout do Stripe
       if (data.url) {
