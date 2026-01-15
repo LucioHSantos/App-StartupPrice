@@ -90,7 +90,7 @@ export const translations = {
       feature3: "Better control of your profit",
       emailLabel: "Email",
       emailPlaceholder: "your@email.com",
-      buyButton: "Buy $97/month",
+      buyButton: "Buy $4.99/month",
       testButton: "Test Pro (test mode)",
       cancelButton: "Maybe later",
       processing: "Processing...",
@@ -190,7 +190,7 @@ export const translations = {
       feature3: "Melhor controle do seu lucro",
       emailLabel: "Email",
       emailPlaceholder: "seu@email.com",
-      buyButton: "Comprar R$97/mês",
+      buyButton: "Comprar R$0,00/mês", // Será atualizado dinamicamente com a cotação atual
       testButton: "Testar Pro (modo teste)",
       cancelButton: "Talvez depois",
       processing: "Processando...",

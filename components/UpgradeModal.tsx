@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStore } from '../store';
 import { translations } from '../translations';
+import { convertUSDToBRL, formatBRLPrice } from '../utils/currency';
 
 interface UpgradeModalProps {
   open: boolean;
@@ -18,6 +19,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
   const t = translations[language].upgradeModal;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [buyButtonText, setBuyButtonText] = useState(t.buyButton);
   const [email, setEmail] = useState(() => {
     // Tentar obter email salvo ou usar vazio
     if (typeof window !== 'undefined') {
@@ -25,6 +27,22 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
     }
     return '';
   });
+
+  // Atualizar o texto do botão com conversão de moeda para português
+  useEffect(() => {
+    const updateBuyButtonText = async () => {
+      if (language === 'pt') {
+        const usdPrice = 4.99;
+        const brlPrice = await convertUSDToBRL(usdPrice);
+        const formattedPrice = formatBRLPrice(brlPrice);
+        setBuyButtonText(`Comprar ${formattedPrice}/mês`);
+      } else {
+        setBuyButtonText(t.buyButton);
+      }
+    };
+
+    updateBuyButtonText();
+  }, [language, t.buyButton]);
 
   // Price ID hardcoded - StartupPrice Pro
   const priceId = 'price_1SnijMHdcjTkJnJN6DrIfrTJ';
@@ -129,7 +147,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
             disabled={loading}
             className="w-full bg-gradient-to-r from-accent to-orange-400 text-white py-4 px-6 rounded-2xl font-bold shadow-lg shadow-orange-200 transform active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
-            {loading ? t.processing : t.buyButton}
+            {loading ? t.processing : buyButtonText}
           </button>
           <button
             onClick={onConfirmUpgrade}
