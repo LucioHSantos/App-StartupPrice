@@ -59,14 +59,6 @@ export const WizardStep2: React.FC = () => {
   const [selectedNiche, setSelectedNiche] = useState(niche || '');
   const [upgradeOpen, setUpgradeOpen] = useState(false);
 
-  const niches = [
-    { id: 'pet', label: t.niches.pet },
-    { id: 'soap', label: t.niches.soap },
-    { id: 'saas', label: t.niches.saas },
-    { id: 'consulting', label: t.niches.consulting },
-    { id: 'ecommerce', label: t.niches.ecommerce }
-  ];
-
   // Check if user already has a business (has completed services)
   const hasExistingBusiness = services.length > 0 || businessName !== '';
 
@@ -103,19 +95,12 @@ export const WizardStep2: React.FC = () => {
         
         <div className="space-y-1">
           <label className="text-sm font-semibold text-gray-700">{t.niche}</label>
-          <div className="grid grid-cols-1 gap-2">
-            {niches.map(n => (
-              <button
-                key={n.id}
-                onClick={() => setSelectedNiche(n.label)}
-                className={`text-left p-4 rounded-xl border-2 transition-all font-medium ${
-                  selectedNiche === n.label ? 'border-primary bg-primary/5 text-primary' : 'border-gray-100 text-gray-500'
-                }`}
-              >
-                {n.label}
-              </button>
-            ))}
-          </div>
+          <input 
+            value={selectedNiche}
+            onChange={(e) => setSelectedNiche(e.target.value)}
+            placeholder={language === 'pt' ? 'Ex: Consultoria, E-commerce, Serviços Pet...' : language === 'es' ? 'Ej: Consultoría, E-commerce, Servicios para Mascotas...' : 'Ex: Consulting, E-commerce, Pet Services...'}
+            className="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-primary outline-none transition-all"
+          />
         </div>
       </div>
 
@@ -130,7 +115,7 @@ export const WizardStep2: React.FC = () => {
 
       <button 
         onClick={handleNext}
-        disabled={!name}
+        disabled={!name || !selectedNiche}
         className="w-full bg-primary text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg disabled:opacity-50"
       >
         {t.next} →
