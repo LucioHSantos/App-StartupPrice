@@ -32,7 +32,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "YOUR PROFITABLE PRICE",
     breakEven: "BREAK-EVEN",
-    proBanner: "🚀 Unlock Pro pricing → 7-day trial $4.99",
+    proBanner: "Switch to Pro version now $4.99",
     tierBasic: "Basic (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",
@@ -91,7 +91,7 @@ export const translations = {
       emailLabel: "Email",
       emailPlaceholder: "your@email.com",
       buyButton: "Buy $4.99/month",
-      testButton: "Test Pro (test mode)",
+      testButton: "", // Removido - não é mais necessário
       cancelButton: "Maybe later",
       processing: "Processing...",
       emailError: "Please enter a valid email",
@@ -132,7 +132,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "SEU PREÇO LUCRATIVO",
     breakEven: "PONTO DE EQUILÍBRIO",
-    proBanner: "🚀 Libere Preços Pro → Teste 7 dias $4.99",
+    proBanner: "Mude agora para versão pro $4.99", // Será atualizado dinamicamente com a cotação atual
     tierBasic: "Básico (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",
@@ -191,7 +191,7 @@ export const translations = {
       emailLabel: "Email",
       emailPlaceholder: "seu@email.com",
       buyButton: "Comprar R$0,00/mês", // Será atualizado dinamicamente com a cotação atual
-      testButton: "Testar Pro (modo teste)",
+      testButton: "", // Removido - não é mais necessário
       cancelButton: "Talvez depois",
       processing: "Processando...",
       emailError: "Por favor, informe um email válido",
@@ -232,7 +232,7 @@ export const translations = {
     upgrade: "Upgrade Pro",
     profitablePrice: "SU PRECIO RENTABLE",
     breakEven: "PUNTO DE EQUILIBRIO",
-    proBanner: "🚀 Desbloquea Precios Pro → Prueba 7 días $4.99",
+    proBanner: "Cambia ahora a versión pro $4.99",
     tierBasic: "Básico (1.70x)",
     tierPro: "Pro (2.52x)",
     tierPremium: "Premium (3.15x)",
@@ -291,7 +291,7 @@ export const translations = {
       emailLabel: "Email",
       emailPlaceholder: "tu@email.com",
       buyButton: "Comprar $97/mes",
-      testButton: "Probar Pro (modo prueba)",
+      testButton: "", // Removido - não é mais necessário
       cancelButton: "Tal vez después",
       processing: "Procesando...",
       emailError: "Por favor, ingresa un email válido",

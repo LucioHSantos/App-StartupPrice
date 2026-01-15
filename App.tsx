@@ -1,16 +1,34 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStore } from './store';
 import { translations } from './translations';
 import { WizardStep1, WizardStep2, WizardStep3, WizardStep4, WizardStep5, WizardStep6, WizardStep7 } from './components/WizardSteps';
 import { LanguageToggle } from './components/LanguageToggle';
 import { ProgressBar } from './components/ProgressBar';
 import { UpgradeModal } from './components/UpgradeModal';
+import { convertUSDToBRL, formatBRLPrice } from './utils/currency';
 
 const App: React.FC = () => {
   const { step, language, setIsPremium } = useStore();
   const t = translations[language];
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [proBannerText, setProBannerText] = useState(t.proBanner);
+
+  // Atualizar o texto do banner com conversão de moeda para português
+  useEffect(() => {
+    const updateProBannerText = async () => {
+      if (language === 'pt') {
+        const usdPrice = 4.99;
+        const brlPrice = await convertUSDToBRL(usdPrice);
+        const formattedPrice = formatBRLPrice(brlPrice);
+        setProBannerText(`Mude agora para versão pro ${formattedPrice}`);
+      } else {
+        setProBannerText(t.proBanner);
+      }
+    };
+
+    updateProBannerText();
+  }, [language, t.proBanner]);
 
   const renderStep = () => {
     switch (step) {
@@ -57,7 +75,7 @@ const App: React.FC = () => {
                onClick={() => setUpgradeOpen(true)}
                className="w-full bg-gradient-to-r from-accent to-orange-400 text-white py-3 px-4 rounded-xl font-bold shadow-lg shadow-orange-200 transform active:scale-95 transition-all text-sm"
              >
-               {t.proBanner}
+               {proBannerText}
              </button>
           </div>
         )}

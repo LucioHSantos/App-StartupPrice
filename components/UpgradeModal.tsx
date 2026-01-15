@@ -150,13 +150,6 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
             {loading ? t.processing : buyButtonText}
           </button>
           <button
-            onClick={onConfirmUpgrade}
-            disabled={loading}
-            className="w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-xl font-semibold hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-          >
-            {t.testButton}
-          </button>
-          <button
             onClick={onClose}
             disabled={loading}
             className="w-full border-2 border-gray-200 text-gray-500 py-4 px-6 rounded-2xl font-bold hover:border-gray-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
